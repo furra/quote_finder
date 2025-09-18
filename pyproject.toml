@@ -1,0 +1,20 @@
+[project]
+name = "quote-finder"
+version = "0.1.0"
+description = "Chatbot to get quotes"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "langgraph>=0.6.7",
+    "python-slugify>=8.0.4",
+    "python-dotenv>=1.1.1",
+    "langchain>=0.3.27",
+    "langchain-groq>=0.3.8",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "ipython>=9.5.0",
+]
