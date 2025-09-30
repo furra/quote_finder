@@ -1,5 +1,6 @@
 """LangGrapg Agent diagram file"""
 
+import textwrap
 from typing import TYPE_CHECKING
 from uuid import uuid4
 from typing_extensions import TypedDict
@@ -63,7 +64,7 @@ def should_continue(state: State) -> str:
         print(
             "================================= Reasoning ===================================="
         )
-        print(last_message.additional_kwargs["reasoning_content"])
+        print(textwrap.fill(last_message.additional_kwargs["reasoning_content"], width=150))
     if isinstance(last_message, AIMessage) and last_message.tool_calls:
         return "tools"
     return END
@@ -113,15 +114,16 @@ def stream(
     graph: "CompiledStateGraph",
     user_input: str,
     thread_id: str | None = None,
-):
+) -> list[str]:
     """Streams user input to the graph and prints every event step"""
     if thread_id is None:
         thread_id = str(uuid4())
     config: "RunnableConfig" = {"configurable": {"thread_id": thread_id}}
-    # add debug mode
-    for event in graph.stream(
-        {"messages": [HumanMessage(content=user_input)]},
-        config,
-        stream_mode="values",
-    ):
-        event["messages"][-1].pretty_print()
+    return [
+        event["messages"][-1].content
+        for event in graph.stream(
+            {"messages": [HumanMessage(content=user_input)]},
+            config,
+            stream_mode="values",
+        )
+    ]

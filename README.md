@@ -35,17 +35,22 @@ python main.py
 ```
 
 ```terminal
-python main.py
 User: quote from Kafka on the Shore
 ================================ Human Message =================================
 
 quote from Kafka on the Shore
 ================================= Reasoning ====================================
-Okay, the user is asking for a quote from "Kafka on the Shore." Let me see. First, I need to determine whether to use the get_author_quote or get_book_quote function. The book title is "Kafka on the Shore," so the correct function would be get_book_quote because it's a specific book. The author is Haruki Murakami, but since the user mentioned the book title, I should use the book name in the function call.
+Okay, the user is asking for a quote from "Kafka on the Shore." Let me see. First, I need to determine whether to use the get_author_quote or
+get_book_quote function. The book title is "Kafka on the Shore," so the correct function would be get_book_quote because it's a specific book. The
+author is Haruki Murakami, but since the user mentioned the book title, I should use the book name in the function call.
 
-Wait, the user wrote "Kafka on the Shore" which is the book's title. So I should use get_book_quote with the book_name parameter set to "Kafka on the Shore." Let me check if that's the correct approach. The get_book_quote function is supposed to get a quote from the book by hitting the recite API. So yes, using the book name here is appropriate.
+Wait, the user wrote "Kafka on the Shore" which is the book's title. So I should use get_book_quote with the book_name parameter set to "Kafka on the
+Shore." Let me check if that's the correct approach. The get_book_quote function is supposed to get a quote from the book by hitting the recite API.
+So yes, using the book name here is appropriate.
 
-I need to make sure that the function is called correctly. The parameters require "book_name" as a string. So the arguments should be {"book_name": "Kafka on the Shore"}. Let me call that function first. If it doesn't return a quote, then I'll fall back to get_random_quote. But since the user specifically asked for a quote from that book, I should try the book function first.
+I need to make sure that the function is called correctly. The parameters require "book_name" as a string. So the arguments should be {"book_name":
+"Kafka on the Shore"}. Let me call that function first. If it doesn't return a quote, then I'll fall back to get_random_quote. But since the user
+specifically asked for a quote from that book, I should try the book function first.
 
 ================================== Ai Message ==================================
 Tool Calls:
@@ -66,7 +71,9 @@ User: quote from Walt Disney
 
 quote from Walt Disney
 ================================= Reasoning ====================================
-Okay, the user wants a quote from Walt Disney. Let me check the available tools. There's get_author_quote which takes an author's name. Since Walt Disney is an author, I should use that function. I'll call get_author_quote with author_name set to "Walt Disney". If that doesn't work, I can fall back to get_random_quote, but I'll try the specific author first.
+Okay, the user wants a quote from Walt Disney. Let me check the available tools. There's get_author_quote which takes an author's name. Since Walt
+Disney is an author, I should use that function. I'll call get_author_quote with author_name set to "Walt Disney". If that doesn't work, I can fall
+back to get_random_quote, but I'll try the specific author first.
 
 ================================== Ai Message ==================================
 Tool Calls:
@@ -87,7 +94,9 @@ User: surprise me
 
 surprise me
 ================================= Reasoning ====================================
-Okay, the user said "surprise me." I need to come up with a quote. Since they want a surprise, maybe a random quote would be best. Let me check the tools available. There's get_random_quote, which doesn't require any parameters. I should use that. I don't need to call any other tools because the user didn't specify an author or book. Just call get_random_quote once.
+Okay, the user said "surprise me." I need to come up with a quote. Since they want a surprise, maybe a random quote would be best. Let me check the
+tools available. There's get_random_quote, which doesn't require any parameters. I should use that. I don't need to call any other tools because the
+user didn't specify an author or book. Just call get_random_quote once.
 
 ================================== Ai Message ==================================
 Tool Calls:
@@ -104,9 +113,13 @@ Name: get_random_quote
 "I'll prepare and someday my chance will come." - Abraham Lincoln
 ```
 
+### Run in streamlit
+
+```terminal
+streamlit run ui.py
+```
+
 ## TODOS
 
-- Add debug mode to analyze messages
-- Add other chatbot examples
-- Add StreamLit ui
+- Multi-agent structure
 - Add more tools (wikipedia, tavily)
