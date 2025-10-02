@@ -5,9 +5,12 @@ from random import choice
 
 import httpx
 
+from langchain_community.utilities import WikipediaAPIWrapper
+from langchain_community.tools import WikipediaQueryRun
 from langchain_core.tools import tool
 from pydantic import BaseModel
 from slugify import slugify
+
 
 BOOK_API_URL = "https://openlibrary.org/search.json"
 QUOTE_AUTHOR_API_URL = "https://api.quotable.io"
@@ -135,4 +138,4 @@ def get_random_book_quote(_: str) -> dict[str, str]:
     }
 
 
-# TODO: tavily search
+wikipedia_tool = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper(top_k_results=3))  # type: ignore

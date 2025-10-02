@@ -23,7 +23,7 @@ with st.sidebar:
         groq_api_key = st.text_input("Enter your Groq API Key", type="password")
         st.warning("Please enter your Groq API key to use the chatbot.")
 
-if st.button('Clear history'):
+if st.button("Clear history"):
     st.session_state.messages = st.session_state.messages[:1]
     st.session_state.conversation_id = str(uuid4())
 
@@ -66,4 +66,3 @@ if groq_api_key:
         st.session_state.messages.append({"role": "assistant", "content": response[-1]})
 else:
     st.error("Please enter your Groq API key in the sidebar to use the chatbot.")
-
