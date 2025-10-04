@@ -125,6 +125,9 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/6a/75/ac41cdc055c8f52ad8710306e63c08a0e60e928c1f434e1edad303c1a045/baml_py-0.210.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:38ca21fbcb98b82854532f803ac8d066add910ce2d3f629599c65b47e565f816", size = 23068947, upload-time = "2025-10-01T05:40:42.969Z" },
     { url = "https://files.pythonhosted.org/packages/19/ff/25eb7b12e510131afda0a5e391faf1f87bd3b0ef7834b74b6ab0ff35a270/baml_py-0.210.0-cp38-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:663ccdf9d0a4f2fb64825d94881ab28fc77fec9662d0d74208845998868d22c8", size = 22239620, upload-time = "2025-10-01T05:40:50.311Z" },
     { url = "https://files.pythonhosted.org/packages/37/42/3c1bedcdf252053345125727501c0ee6e3e7f553f49d877bdd7698247b4f/baml_py-0.210.0-cp38-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:8860d0222d77978dd32c2529a725d3ce2622ae9c13f2577f586135f4982d5f68", size = 22470660, upload-time = "2025-10-01T05:40:53.175Z" },
+    { url = "https://files.pythonhosted.org/packages/fd/ac/9a8b00039be26f26861439d458388b9642cfd881ea7e51615c27d794d9b1/baml_py-0.210.0-cp38-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:7edf0dc4ddf716b0908ba4d00d64f21f0a4e4a404bb630ec552de6e334d0a0cd", size = 23197911, upload-time = "2025-10-01T18:34:32.923Z" },
+    { url = "https://files.pythonhosted.org/packages/ee/58/495756aa12d24a267d46dfe64efb86357483fb7b45f162e57213e44e5e27/baml_py-0.210.0-cp38-abi3-win_amd64.whl", hash = "sha256:4f60ef644618502de03d70b51138e429b797e8397d6ec9ed531ccf6b62eab2f4", size = 20271510, upload-time = "2025-10-01T18:45:49.343Z" },
+    { url = "https://files.pythonhosted.org/packages/6f/9c/205aa2bc649a106935e303f87692338cbcc3f5483cf8ac6e551bac4a495c/baml_py-0.210.0-cp38-abi3-win_arm64.whl", hash = "sha256:b370b9736e1f18dca1d5823ec071e1b016a7a028568f2b2717755d6929a2e1c6", size = 18488053, upload-time = "2025-10-01T18:45:51.604Z" },
 ]
 
 [[package]]
@@ -1134,6 +1137,7 @@ dependencies = [
     { name = "langchain-community" },
     { name = "langchain-groq" },
     { name = "langgraph" },
+    { name = "langsmith" },
     { name = "python-dotenv" },
     { name = "python-slugify" },
     { name = "streamlit" },
@@ -1154,6 +1158,7 @@ requires-dist = [
     { name = "langchain-community", specifier = ">=0.3.30" },
     { name = "langchain-groq", specifier = ">=0.3.8" },
     { name = "langgraph", specifier = ">=0.6.7" },
+    { name = "langsmith", specifier = ">=0.4.27" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
     { name = "python-slugify", specifier = ">=8.0.4" },
     { name = "streamlit", specifier = ">=1.50.0" },

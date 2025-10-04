@@ -15,6 +15,7 @@ dependencies = [
     "wikipedia>=1.4.0",
     "langchain-community>=0.3.30",
     "baml-py>=0.210.0",
+    "langsmith>=0.4.27",
 ]
 
 [dependency-groups]
